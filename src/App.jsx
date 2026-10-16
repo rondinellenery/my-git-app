@@ -1,19 +1,23 @@
 import './App.css'
-import Greetings from './components/Greetings'
 import { Header } from './components/Header'
+import Home from '.pages/Home';
 
-const user = window.prompt("Qual seu nome?") || "Visitante";
 
 function App() {
   return (
     <>
-      <Header/>    
-      <div>
-            <Greetings
-            nome={user}
-            mensagem="Seja bem-vindo ao React!"
-            />
-        </div>
+    
+      <Header>
+        brand="Geração Tech"
+        description="Sede Bezerra"
+        <a href="#equipe">Equipe</a>
+        <a href="#aprendizado">Aprendizado</a>
+
+      </Header>
+      <main className='container'>
+        <Home/>
+      </main>
+      
     </>
   )
 }
