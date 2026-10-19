@@ -8,9 +8,15 @@ function Home() {
   return (
     <>
      <div className="name-form">
-        
+        <label htmlFor="visitorName">Como podemos chamar você?</label>
+        <input
+          type="text"
+          id="visitor-name"
+          placeholder="Digite seu nome"
+          onChange={(evento) => setVisitorName(evento.target.value)}
+        />
     </div>
-    <Greetings />
+    <Greetings nome={visitorName || "visitante"}/>
     
     </>
    
