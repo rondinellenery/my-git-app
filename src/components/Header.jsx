@@ -1,18 +1,22 @@
-import style from './Header.module.css';
+
+import { Link } from 'react-router-dom';
+import styles from './Header.module.css';
 
 export function Header({ brand, description, children }) {
-      return(
-      <header className = {style.header}>
-        <div className = {style.brand}>
-          <span className = {style.logo}>GT</span>
-        </div>
-        <div>
+  return (
+    <header className={styles.header}>
+      <Link className={styles.brand} to="/">
+        <span className={styles.logo}>GT</span>
+
+        <div className={styles.brandText}>
           <strong>{brand}</strong>
           <span>{description}</span>
         </div>
-        <nav className ={style.navigation}>
-          {children}
-        </nav>
-      </header>
-    );
+      </Link>
+
+      <nav className={styles.navigation}>
+        {children}
+      </nav>
+    </header>
+  );
 }
